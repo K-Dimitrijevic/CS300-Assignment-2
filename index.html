@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>CS300 Assignment 2</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="assignment2.css">
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+<div class="container header-inner">
+
+<a class="logo" href="#home">
+<i class="fa-solid fa-pen-to-square"></i> CS300 Assignment 2
+</a>
+
+<!-- Mobile nav toggle -->
+<button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="fa fa-bars" aria-hidden="true"></span>
+</button>
+
+<nav id="primary-nav" class="primary-nav">
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#assignment">Assignment</a></li>
+<li><a href="#submission">Submission</a></li>
+<li><a href="#grading">Grading</a></li>
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+<section id="home" class="hero">
+
+<div class="container hero-inner">
+
+<div class="hero-text">
+
+<h1>CS300 Assignment 2 Web Project</h1>
+
+<p class="lead">
+A  mobile-first layout for CS300 assignment.
+Built with HTML, CSS and JavaScript.
+</p>
+
+<p>
+<a class="btn primary" href="#features">Explore Features</a>
+<a class="btn ghost" href="#about">Learn More</a>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="features" class="features">
+
+<div class="container">
+
+<h2 class="section-title">Interactivity showcase</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<i class="fa-solid fa-mobile-screen feature-icon"></i>
+<h3>Started first with mobile as the default</h3>
+<p>The layout expands smoothly to larger displays.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-layer-group feature-icon"></i>
+<h3>Flexbox Layout</h3>
+<p>Built primarily by using flexbox for the structure.</p>
+</div>
+
+<div class="feature-card">
+<i class="fa-solid fa-check feature-icon"></i>
+<h3>This box largens with increased screen size</h3>
+<p>Easy way to tell the responsive design is adjusting with bigger screen size.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="about" class="about">
+
+<div class="container about-inner">
+
+<div class="about-media">
+
+<picture>
+
+<source media="(min-width:1024px)"
+srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400">
+
+<source media="(min-width:768px)"
+srcset="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900">
+
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600"
+alt="Students collaborating">
+
+</picture>
+
+</div>
+
+<div class="about-text">
+
+<h2>About this project</h2>
+
+<p>
+This page demonstrates responsive design with a mobile design first being in mind and uses a CSS flexbox layout. There's also some JavaScript for interactivity.
+</p>
+
+<p>
+The layout adapts smoothly across varying screen sizes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="contact">
+
+</section>
+
+
+<section id="assignment" class="container placeholder">
+<h2>Contact</h2>
+<p>Email: <a href="mailto:kdimitrijevi@neiu.com">kdimitrijevi@neiu.com</a></p>
+</section>
+
+</main>
+
+
+<footer class="site-footer">
+
+<div class="container footer-inner">
+
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="social">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+</div>
+
+<div class="copyright">
+© 2026 CS300 Assignment 2
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+// Mobile nav toggle behavior
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  btn.addEventListener('click', function(){
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+})();
+</script>
+
+</body>
+</html>

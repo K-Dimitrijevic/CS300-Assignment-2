@@ -1,0 +1,433 @@
+:root{
+--bg:#fbfbfb;
+--muted-bg:#f0f2f5;
+--card:#ffffff;
+--accent:#d963ed;
+--accent2:#c63bfa;
+--text:#10212a;
+--muted:#667085;
+--radius:12px;
+--max-width:1100px;
+--header-h:64px;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+font-size:62.5%;
+}
+
+body{
+font-family:'Inter',sans-serif;
+color:var(--text);
+background:linear-gradient(180deg,var(--bg),var(--muted-bg));
+overflow-x:hidden;
+}
+
+.container{
+max-width:var(--max-width);
+margin:auto;
+padding:0 1.6rem;
+}
+
+/* HEADER */
+
+.site-header{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+height:var(--header-h);
+display:flex;
+align-items:center;
+box-shadow:0 6px 20px rgba(0,0,0,0.05);
+z-index:1000;
+overflow:visible;
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:100%;
+gap:1rem;
+/* prevent wrapping of children */
+flex-wrap:nowrap;
+}
+
+.logo{
+font-size:1.6rem;
+font-weight:700;
+text-decoration:none;
+color:var(--text);
+display:flex;
+align-items:center;
+gap:.5rem;
+white-space:nowrap; /* keep logo on one line */
+flex:0 0 auto;
+}
+
+.logo i{
+color:var(--accent);
+}
+
+/* NAVIGATION */
+
+/* hide the full nav on small screens and show a toggle button */
+.primary-nav{
+display:none;
+}
+
+.primary-nav ul{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:.8rem;
+list-style:none;
+padding:1rem 0;
+margin:0;
+}
+
+.primary-nav a{
+text-decoration:none;
+color:var(--text);
+font-size:1.6rem;
+padding:.4rem .6rem;
+position:relative;
+}
+
+.primary-nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-4px;
+width:0;
+height:2px;
+background:var(--accent);
+transition:.2s;
+}
+
+.primary-nav a:hover::after{
+width:100%;
+}
+
+/* nav toggle button (hamburger) */
+.nav-toggle{
+background:none;
+border:0;
+font-size:1.8rem;
+padding:.5rem;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+color:var(--text);
+flex:0 0 auto;
+}
+
+/* when the mobile nav is opened, position the nav as a dropdown that doesn't change header height */
+.primary-nav.open{
+display:block;
+position:absolute;
+left:0;
+top:var(--header-h);
+right:0;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+padding:1rem 0;
+}
+
+/* HERO */
+
+.hero{
+padding-top:100px;
+padding-bottom:5rem;
+background:linear-gradient(
+135deg,
+rgba(217,99,237,0.05),
+rgba(198,59,250,0.05)
+);
+}
+
+.hero-inner{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:1.6rem;
+}
+
+.hero-text{
+max-width:520px;
+}
+
+.hero h1{
+font-size:2.6rem;
+font-weight:800;
+margin:0 0 1.6rem;
+}
+
+.lead{
+font-size:1.6rem;
+color:var(--muted);
+}
+
+/* removed large decorative visual — keep layout clean */
+.hero-visual{display:none !important}
+
+/* BUTTONS */
+
+.btn{
+display:inline-block;
+padding:.8rem 1.6rem;
+border-radius:30px;
+text-decoration:none;
+font-size:1.6rem;
+}
+
+.btn.primary{
+background:var(--accent);
+color:white;
+}
+
+.btn.ghost{
+border:1px solid var(--accent);
+color:var(--accent);
+}
+
+/* SECTIONS */
+
+section{
+padding-top:5rem;
+padding-bottom:5rem;
+}
+
+.section-title{
+text-align:center;
+font-size:2rem;
+margin-bottom:2rem;
+}
+
+/* FEATURES */
+
+.feature-grid{
+display:flex;
+flex-direction:column;
+gap:2rem;
+}
+
+.feature-card{
+background:var(--card);
+padding:2rem;
+border-radius:var(--radius);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:.8rem;
+transition:.2s;
+}
+
+.feature-card:hover{
+transform:translateY(-6px);
+box-shadow:0 14px 30px rgba(0,0,0,0.08);
+}
+
+.feature-icon{
+font-size:2rem;
+color:var(--accent);
+}
+
+/* make card text larger for easier reading */
+.feature-card h3{
+	font-size:1.9rem;
+	margin:0.4rem 0 0.6rem;
+}
+.feature-card p{
+	font-size:1.6rem;
+	color:var(--muted);
+	margin:0;
+}
+
+/* about section */
+
+.about-inner{
+display:flex;
+flex-direction:column;
+gap:1.6rem;
+}
+
+.about-media img{
+max-width:80%;
+border-radius:var(--radius);
+}
+
+/* footer designing */
+
+.site-footer{
+background:white;
+padding:2rem 0;
+border-top:1px solid #eee;
+}
+
+.footer-inner{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:1rem;
+}
+
+.footer-links{
+display:flex;
+gap:1rem;
+}
+
+.footer-links a{
+text-decoration:none;
+color:var(--muted);
+}
+
+.social a{
+font-size:1.5rem;
+margin-left:.5rem;
+color:var(--text);
+}
+
+/* for tablet */
+
+/* TABLET */
+
+@media (min-width:768px){
+
+/* shows the full nav on tablet and larger */
+.primary-nav{
+display:block !important;
+position:static;
+}
+
+.nav-toggle{
+display:none;
+}
+
+.primary-nav ul{
+flex-direction:row;
+gap:1.2rem;
+}
+
+/* hero layout becomes side-by-side */
+
+.hero-inner{
+flex-direction:row;
+text-align:left;
+}
+
+.hero-text{
+flex:1;
+}
+
+/* feature cards become 2 columns */
+
+.feature-grid{
+flex-direction:row;
+flex-wrap:wrap;
+}
+
+.feature-card{
+flex:1 1 calc(50% - 1rem);
+}
+
+/* about layout */
+
+.about-inner{
+flex-direction:row;
+align-items:center;
+gap:2rem;
+}
+
+.about-media{
+flex:0 0 36%;
+}
+
+.about-text{
+flex:1;
+padding-left:1.6rem;
+}
+
+.about-media img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+.about-text h2{
+font-size:1.8rem;
+margin-bottom:.8rem;
+}
+
+.about-text p{
+font-size:1.5rem;
+line-height:1.6;
+color:var(--text);
+}
+
+/* footer layout */
+
+.footer-inner{
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+}
+
+.site-footer{
+padding-top:1.25rem;
+padding-bottom:1.5rem;
+}
+
+}
+
+
+/* DESKTOP */
+
+@media (min-width:1024px){
+
+.feature-card{
+flex:1 1 calc(33.33% - 1rem);
+}
+
+.hero h1{
+font-size:4.4rem;
+}
+
+/* about section adjustments */
+
+.about-media{
+flex:0 0 30%;
+}
+
+.about-text h2{
+font-size:2rem;
+}
+
+.about-text p{
+font-size:1.7rem;
+}
+
+.feature-card h3{
+font-size:2.4rem;
+margin-bottom:0.8rem;
+}
+
+.feature-card p{
+font-size:1.8rem;
+}
+
+.feature-card{
+padding:2.4rem;
+}
+
+}
